@@ -94,7 +94,10 @@ class FileViewTools {
 
     try {
       final Dio dio = Dio(
-        BaseOptions(connectTimeout: 90 * 1000, receiveTimeout: 90 * 1000),
+        BaseOptions(
+          connectTimeout: const Duration(milliseconds: 90 * 1000),
+          receiveTimeout: const Duration(milliseconds: 90 * 1000),
+        ),
       );
 
       final Response<dynamic> response = await dio.download(
